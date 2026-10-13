@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Priy Ranjan | Java Backend Developer</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;800&family=Inter:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F6F7FC;--bg2:#ECEEF8;--card:#FFFFFF;--ink:#10132B;--mute:#565B7A;--line:#D9DCEE;--a:#4F46E5;--b:#0D9488;--glow:rgba(79,70,229,.14);--code:#14172E;--codeink:#E4E7FF;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0A0D1C;--bg2:#0F1330;--card:#121738;--ink:#EDEFFF;--mute:#9CA3CC;--line:#242B5C;--a:#8B7CFF;--b:#2DD4BF;--glow:rgba(139,124,255,.22);--code:#070A18}}
+:root[data-theme="dark"]{--bg:#0A0D1C;--bg2:#0F1330;--card:#121738;--ink:#EDEFFF;--mute:#9CA3CC;--line:#242B5C;--a:#8B7CFF;--b:#2DD4BF;--glow:rgba(139,124,255,.22);--code:#070A18}
+*{box-sizing:border-box}
+html{scroll-padding-top:80px;scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 17px/1.65 Inter,system-ui,sans-serif;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Sora,"Helvetica Neue",Arial,sans-serif;margin:0;line-height:1.1}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--b);outline-offset:3px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--a),var(--b));z-index:20}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 80%,transparent);border-bottom:1px solid var(--line)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0;gap:16px;flex-wrap:wrap}
+nav b{font:800 19px Sora,sans-serif}nav b i{font-style:normal;color:var(--b)}
+nav div{display:flex;gap:18px;font-size:15px;align-items:center;flex-wrap:wrap}
+nav a{text-decoration:none;color:var(--mute)}nav a:hover{color:var(--ink)}
+#theme{font:inherit;font-size:14px;background:none;color:var(--ink);border:1px solid var(--line);border-radius:99px;padding:4px 12px;cursor:pointer}
+.hero{position:relative;padding:80px 0 72px;overflow:hidden}
+.orb{position:absolute;border-radius:50%;filter:blur(70px);opacity:.5;z-index:0;animation:float 14s ease-in-out infinite}
+.o1{width:380px;height:380px;background:var(--a);top:-120px;right:-80px}
+.o2{width:300px;height:300px;background:var(--b);bottom:-140px;left:-60px;animation-delay:-6s;opacity:.35}
+.hero .g{position:relative;z-index:1;display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;border:1px solid var(--line);background:var(--card);border-radius:99px;font-size:14px;color:var(--mute)}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:var(--b);animation:pulse 2s infinite}
+h1{font-size:clamp(40px,6.4vw,76px);font-weight:800;letter-spacing:-.03em;margin:22px 0 0}
+.grad{background:linear-gradient(100deg,var(--a),var(--b),var(--a));background-size:200% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 6s linear infinite}
+.hero p{color:var(--mute);max-width:52ch;margin:22px 0 30px;font-size:18px}
+.hero .eyebrow,.hero h1,.hero p,.btns,.editor{animation:up .9s cubic-bezier(.2,.7,.2,1) both}
+.hero h1{animation-delay:.1s}.hero p{animation-delay:.2s}.btns{animation-delay:.3s}.editor{animation-delay:.25s}
+.btns{display:flex;gap:12px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:12px;text-decoration:none;font-weight:500;border:1px solid var(--line);background:var(--card);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 26px var(--glow)}
+.btn.p{background:linear-gradient(120deg,var(--a),var(--b));color:#fff;border:0}
+.editor{background:var(--code);color:var(--codeink);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:0 30px 60px var(--glow)}
+.etop{display:flex;align-items:center;gap:6px;padding:10px 14px;border-bottom:1px solid rgba(255,255,255,.08)}
+.etop i{width:11px;height:11px;border-radius:50%;background:#FF5F57}.etop i:nth-child(2){background:#FEBC2E}.etop i:nth-child(3){background:#28C840}
+.etabs{display:flex;gap:6px;margin-left:12px}
+.etabs button{font:400 13px "JetBrains Mono",monospace;color:#9CA3CC;background:none;border:0;border-bottom:2px solid transparent;padding:4px 8px;cursor:pointer}
+.etabs button[aria-pressed="true"]{color:#fff;border-color:var(--b)}
+pre{margin:0;padding:18px 20px;font:400 13.5px/1.7 "JetBrains Mono",ui-monospace,monospace;min-height:270px;overflow-x:auto;white-space:pre}
+.k{color:#C4A8FF}.s{color:#7EE7C8}.n{color:#FFB86B}.c{color:#8B93C4}
+.caret{display:inline-block;width:8px;height:15px;background:var(--b);vertical-align:-2px;animation:blink 1s steps(1) infinite}
+.estat{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 16px;font:400 12.5px "JetBrains Mono",monospace;background:rgba(255,255,255,.05);color:#9CA3CC}
+.estat b{color:#7EE7C8;font-weight:400;opacity:0;transition:opacity .4s}.estat b.on{opacity:1}
+.marq{overflow:hidden;border-block:1px solid var(--line);background:var(--bg2);padding:16px 0}
+.mt{display:flex;gap:44px;width:max-content;animation:scroll 32s linear infinite;font:600 18px Sora,sans-serif;color:var(--mute)}
+.mt span::after{content:"✦";margin-left:44px;color:var(--b)}
+section{padding:88px 0}
+.kicker{font:400 14px "JetBrains Mono",monospace;color:var(--b);margin-bottom:10px;display:block}
+h2{font-size:clamp(30px,4.6vw,48px);font-weight:800;letter-spacing:-.025em;margin-bottom:14px}
+.lead{color:var(--mute);max-width:62ch;margin:0 0 40px}
+.bento{display:grid;grid-template-columns:repeat(6,1fr);gap:18px}
+.card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:30px;overflow:hidden;transition:transform .3s,border-color .3s}
+.card::after{content:"";position:absolute;inset:0;background:radial-gradient(320px circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-4px);border-color:var(--a)}.card:hover::after{opacity:1}
+.c6{grid-column:span 6}.c4{grid-column:span 4}.c3{grid-column:span 3}.c2{grid-column:span 2}
+.card h3{font-size:clamp(22px,2.6vw,30px);margin-bottom:6px}
+.card .sub{font:400 13.5px "JetBrains Mono",monospace;color:var(--b);margin:0 0 16px}
+.card h4{font-size:16px;margin:22px 0 6px}
+.card p{margin:0 0 8px;color:var(--mute)}
+.card ul{margin:6px 0 0;padding-left:20px;color:var(--mute)}.card li{margin:5px 0}
+.big{font:800 clamp(44px,6vw,64px) Sora,sans-serif;background:linear-gradient(120deg,var(--a),var(--b));-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 14px}
+.steps button{font:500 14.5px Inter,sans-serif;padding:9px 14px;border:1px solid var(--line);background:var(--bg);color:var(--ink);border-radius:10px;cursor:pointer;transition:transform .2s,background .2s}
+.steps button:hover{transform:translateY(-2px)}
+.steps button[aria-selected="true"]{background:linear-gradient(120deg,var(--a),var(--b));border-color:transparent;color:#fff}
+#panel{border-left:3px solid var(--b);padding:4px 0 4px 16px;max-width:68ch;min-height:92px;animation:up .4s both}
+.tl{position:relative;padding-left:34px;border-left:2px solid var(--line);margin-left:8px}
+.tl article{position:relative;padding-bottom:44px}
+.tl article::before{content:"";position:absolute;left:-43px;top:6px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--b);box-shadow:0 0 0 6px var(--glow)}
+.tl small{font:400 13.5px "JetBrains Mono",monospace;color:var(--b)}
+.tl h3{font-size:24px;margin:6px 0 2px}.tl .co{color:var(--mute);margin-bottom:10px;display:block}
+.tl ul{padding-left:20px;margin:8px 0;max-width:72ch}.tl li{margin:6px 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.chips span{padding:4px 12px;border-radius:99px;border:1px solid var(--line);background:var(--card);font-size:14px;transition:transform .2s,border-color .2s}
+.chips span:hover{transform:translateY(-2px) scale(1.05);border-color:var(--b)}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:18px}
+.sk .card{padding:24px}.sk h3{font-size:18px;margin-bottom:4px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.two h3{font-size:22px;margin-bottom:8px}
+.cta{text-align:center;padding:64px 24px;border-radius:28px;background:linear-gradient(135deg,var(--a),var(--b));color:#fff;position:relative;overflow:hidden}
+.cta h2{color:#fff}.cta p{max-width:48ch;margin:0 auto 26px;opacity:.9}
+.cta .btn{background:#fff;color:#10132B;border:0}
+.cta .links{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+footer{text-align:center;color:var(--mute);padding:0 0 48px;font-size:14px}
+.rv{opacity:0;transform:translateY(26px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@keyframes up{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translate(30px,-26px) scale(1.08)}}
+@keyframes shine{to{background-position:200% center}}
+@keyframes blink{50%{opacity:0}}
+@keyframes pulse{50%{box-shadow:0 0 0 7px transparent;opacity:.5}}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(max-width:820px){.hero .g,.two{grid-template-columns:1fr}.c4,.c3,.c2{grid-column:span 6}.hero{padding:44px 0 48px}section{padding:60px 0}.card{padding:24px}}
+@media(prefers-reduced-motion:reduce){*,*::before{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<div id="prog"></div>
+<div class="bar"><div class="wrap"><nav><b>priy<i>.dev</i></b><div><a href="#projects">Projects</a><a href="#work">Experience</a><a href="#skills">Skills</a><a href="#contact">Contact</a><button id="theme" type="button" aria-label="Switch light or dark theme">Theme</button></div></nav></div></div>
+
+<div class="hero"><div class="orb o1"></div><div class="orb o2"></div><div class="wrap"><div class="g">
+<div>
+<span class="eyebrow"><i></i>Java Backend Developer · Noida, India</span>
+<h1>Backend that <span class="grad">banks can trust.</span></h1>
+<p>I'm Priy. I build Java REST APIs, microservices and SQL for a core banking platform and an enterprise parking system. I read the requirement, build the logic and keep it running.</p>
+<div class="btns"><a class="btn p" href="#projects">See my projects</a><a class="btn" href="#contact">Say hello</a></div>
+</div>
+<div class="editor" aria-label="Illustrative code example">
+<div class="etop"><i></i><i></i><i></i><div class="etabs"><button type="button" data-m="j" aria-pressed="true">Account.java</button><button type="button" data-m="c" aria-pressed="false">Parking.cs</button></div></div>
+<pre><code id="code"></code><span class="caret"></span></pre>
+<div class="estat"><span id="stl">illustrative example</span><b id="ok">✓ 200 OK · tests passed</b></div>
+</div>
+</div></div></div>
+
+<div class="marq" aria-hidden="true"><div class="mt" id="mt"></div></div>
+
+<section id="projects"><div class="wrap">
+<span class="kicker">// projects</span>
+<h2>What I've built</h2>
+<p class="lead">Client and company projects, so I describe what I built and how it works rather than internal code.</p>
+<div class="bento">
+<div class="card c4">
+<h3>TCS BaNCS · core banking</h3>
+<p class="sub">Java 8/11 · Spring Boot · SQL · JUnit</p>
+<p>A core banking suite used by retail banks for universal banking, payments, wealth, forex, compliance, insurance and treasury. I build backend components across several modules in an offshore team at TCS.</p>
+<h4>How a requirement becomes code</h4>
+<div class="steps" role="tablist" id="tabs"></div>
+<div id="panel" role="tabpanel" aria-live="polite"></div>
+</div>
+<div class="card c2">
+<span class="big">1.5+</span>
+<h4>Years building backend</h4>
+<p>REST APIs, microservices and SQL in banking and enterprise settings.</p>
+<h4>Delivers</h4>
+<p>Logic that matches the client request, fewer recurring defects and fixes within SLA.</p>
+</div>
+<div class="card c3">
+<h3>Curo Park · parking</h3>
+<p class="sub">C# · .NET · MS SQL Server</p>
+<p>Parking software for malls and residential societies: vehicle entry and exit, slot allocation, payments, users and reports.</p>
+<ul>
+<li>Built backend features from business requirement documents.</li>
+<li>Wrote SQL Server CRUD queries and admin reports.</li>
+<li>Shipped fixes and enhancements from client change requests.</li>
+</ul>
+</div>
+<div class="card c3">
+<h3>SQL and production support</h3>
+<p class="sub">Oracle · PL/SQL · MySQL · MS SQL</p>
+<p>The data layer and the firefighting that keep a banking platform dependable.</p>
+<ul>
+<li>Write, test and optimize complex queries for retrieval, updates and reporting.</li>
+<li>Validate logic with JUnit and support multithreaded, concurrent requests.</li>
+<li>Troubleshoot production issues with other teams and deliver fixes on time.</li>
+</ul>
+</div>
+</div>
+</div></section>
+
+<section id="work" style="background:var(--bg2)"><div class="wrap">
+<span class="kicker">// experience</span>
+<h2>Where I've worked</h2>
+<div class="tl" style="margin-top:36px">
+<article>
+<small>Apr 2025 – Present · Noida</small>
+<h3>Assistant System Engineer, Java Backend</h3><span class="co">Tata Consultancy Services · TCS BaNCS</span>
+<ul>
+<li>Develop and maintain Java backend components for a core banking platform within an offshore team.</li>
+<li>Analyze BRDs and functional specs to implement business logic in Java and SQL.</li>
+<li>Enhance services from client change requests, improving reliability and cutting recurring defects.</li>
+<li>Write, test and optimize complex SQL for retrieval, updates and reporting.</li>
+<li>Validate with JUnit, support multithreaded request handling and fix production issues within SLA.</li>
+</ul>
+<div class="chips"><span>Java</span><span>Spring Boot</span><span>SQL</span><span>JUnit</span></div>
+</article>
+<article>
+<small>Jan 2025 – Apr 2025 · Noida</small>
+<h3>Software Developer</h3><span class="co">Pentaminds Technologies · Curo Park</span>
+<ul>
+<li>Developed backend functionality in C# and .NET from business requirement documents.</li>
+<li>Designed and ran SQL Server queries for CRUD operations and administrator reports.</li>
+<li>Resolved bugs and enhanced code per client change requests.</li>
+<li>Worked directly with business stakeholders to turn requirements into features.</li>
+</ul>
+<div class="chips"><span>C#</span><span>.NET</span><span>MS SQL Server</span></div>
+</article>
+</div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+<span class="kicker">// skills</span>
+<h2>Toolbox</h2>
+<div class="sk" style="margin-top:32px">
+<div class="card"><h3>Languages</h3><div class="chips"><span>Java 8</span><span>Java 11</span><span>C#</span><span>SQL</span><span>PL/SQL</span><span>HTML</span><span>CSS</span><span>Unix</span></div></div>
+<div class="card"><h3>Frameworks and architecture</h3><div class="chips"><span>Spring Boot</span><span>Spring MVC</span><span>Hibernate</span><span>Microservices</span><span>REST APIs</span><span>JDBC</span><span>Kafka</span><span>.NET</span></div></div>
+<div class="card"><h3>Testing and DevOps</h3><div class="chips"><span>JUnit</span><span>Unit testing</span><span>Docker</span><span>CI/CD</span></div></div>
+<div class="card"><h3>Databases</h3><div class="chips"><span>Oracle SQL</span><span>MySQL</span><span>MS SQL Server</span></div></div>
+<div class="card"><h3>Tools</h3><div class="chips"><span>Git</span><span>GitHub</span><span>Postman</span><span>Swagger</span><span>Jira</span><span>Eclipse</span><span>VS Code</span><span>NetBeans</span><span>PL/SQL Developer</span><span>PuTTY</span><span>WinSCP</span></div></div>
+<div class="card"><h3>Practices</h3><div class="chips"><span>Data structures</span><span>OOP</span><span>Multithreading</span><span>Concurrency</span><span>CRUD</span><span>Agile</span><span>Scrum</span><span>BRD analysis</span><span>Debugging</span></div></div>
+</div>
+</div></section>
+
+<section style="background:var(--bg2)"><div class="wrap">
+<span class="kicker">// education</span>
+<h2>Learning</h2>
+<div class="two" style="margin-top:32px">
+<div class="card"><h3>MCA</h3><p class="sub">CGPA 9.38</p><p>SRM Institute of Science and Technology, Ghaziabad, UP. Jul 2022 – May 2024.</p></div>
+<div class="card"><h3>Badges and certificates</h3>
+<ul>
+<li>HackerRank Gold Badge, Java</li>
+<li>HackerRank Gold Badge, Problem Solving</li>
+<li>Oracle SQL Explorer Badge, Oracle</li>
+<li>LinkedIn Learning: Programming Foundations: Databases</li>
+<li>LinkedIn Learning: Spring Framework in Depth</li>
+<li>Udemy: Generative AI for Beginners</li>
+<li>Udemy: Java 8 New Features</li>
+</ul></div>
+</div>
+</div></section>
+
+<section id="contact"><div class="wrap">
+<div class="cta rv">
+<h2>Let's build something reliable.</h2>
+<p>Open to Java backend roles in Spring Boot, microservices and SQL.</p>
+<div class="links">
+<a class="btn" href="mailto:ranjan.priy75@gmail.com">ranjan.priy75@gmail.com</a>
+<a class="btn" href="https://www.linkedin.com/in/priy-ranjan-854654213/" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/Priy-Ranjan75" rel="noopener">GitHub</a>
+</div>
+</div>
+</div></section>
+<footer>© Priy Ranjan · India</footer>
+
+<script>
+(function(){
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var C={j:['Account.java','@RestController\n@RequestMapping("/api/accounts")\npublic class AccountController {\n\n  @PostMapping("/{id}/transfer")\n  public ResponseEntity<Receipt> transfer(\n      @PathVariable long id,\n      @Valid @RequestBody TransferRequest req) {\n    Receipt r = service.transfer(id, req);\n    return ResponseEntity.ok(r);\n  }\n}'],
+c:['Parking.cs','// illustrative: vehicle entry\n[HttpPost("entry")]\npublic async Task<IActionResult> Entry(EntryDto dto)\n{\n  var slot = await _slots.AllocateAsync(dto.Vehicle);\n  await _log.RecordEntryAsync(dto, slot);\n  return Ok(slot);\n}']};
+var code=document.getElementById('code'),ok=document.getElementById('ok'),tb=document.querySelectorAll('.etabs button'),tm=null;
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')}
+function hl(s){return esc(s).replace(/(\/\/.*)/g,'<span class="c">$1</span>').replace(/("[^"]*")/g,'<span class="s">$1</span>').replace(/(@\w+|\[Http\w+)/g,'<span class="n">$1</span>').replace(/\b(public|class|return|var|await|async|new)\b/g,'<span class="k">$1</span>')}
+function type(m){clearInterval(tm);ok.classList.remove('on');var txt=C[m][1],i=0;if(rm){code.innerHTML=hl(txt);ok.classList.add('on');return}code.textContent='';tm=setInterval(function(){i+=2;code.textContent=txt.slice(0,i);if(i>=txt.length){clearInterval(tm);code.innerHTML=hl(txt);ok.classList.add('on')}},22)}
+tb.forEach(function(b){b.addEventListener('click',function(){tb.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});type(b.dataset.m)})});
+type('j');
+
+var items=['Java','Spring Boot','REST APIs','Microservices','SQL','Oracle','Hibernate','JUnit','Docker','Kafka','C# .NET','Git'],mt=document.getElementById('mt');
+mt.innerHTML=items.concat(items).map(function(x){return '<span>'+x+'</span>'}).join('');
+
+var S=[['1. Read the BRD','I study the Business Requirement Document and functional spec so I understand the rule the bank wants before I write any code.'],
+['2. Design the logic','I turn the requirement into a clear design for the Java and SQL logic, using what I know about core banking processes and the tables involved.'],
+['3. Build the service','I implement the backend component in Java with Spring Boot and REST APIs, handling concurrent requests with multithreading where needed.'],
+['4. Query the data','I write and optimize SQL for retrieval, updates and reporting so the data stays accurate and quick to access.'],
+['5. Test and support','I validate with JUnit, apply client change requests and help troubleshoot production issues so fixes land within SLA.']];
+var tabs=document.getElementById('tabs'),panel=document.getElementById('panel'),bs=[];
+function pick(i){bs.forEach(function(b,j){b.setAttribute('aria-selected',j===i?'true':'false')});panel.innerHTML='<strong>'+S[i][0]+'</strong><p style="margin-top:6px">'+S[i][1]+'</p>'}
+S.forEach(function(s,i){var b=document.createElement('button');b.type='button';b.setAttribute('role','tab');b.textContent=s[0];b.onclick=function(){pick(i)};tabs.appendChild(b);bs.push(b)});
+pick(0);
+
+var pg=document.getElementById('prog');
+addEventListener('scroll',function(){var h=document.documentElement;pg.style.width=(h.scrollTop/(h.scrollHeight-h.clientHeight)*100||0)+'%'},{passive:true});
+document.querySelectorAll('.card').forEach(function(c){c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')})});
+if(!rm&&'IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.1});document.querySelectorAll('.card,.tl article').forEach(function(el){el.classList.add('rv');io.observe(el)});document.querySelectorAll('.cta').forEach(function(el){io.observe(el)})}
+
+var r=document.documentElement;
+document.getElementById('theme').onclick=function(){var d=r.getAttribute('data-theme')?r.getAttribute('data-theme')==='dark':matchMedia('(prefers-color-scheme:dark)').matches;r.setAttribute('data-theme',d?'light':'dark')};
+})();
+</script>
+</body>
+</html>
